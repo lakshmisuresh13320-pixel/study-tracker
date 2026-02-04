@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GIG – The Study Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>GIG – The Last Minute Saviour</h1>
+</header>
+
+<nav>
+  <button onclick="showSection('dashboard')">Dashboard</button>
+  <button onclick="showSection('subjects')">Subjects</button>
+  <button onclick="showSection('leaderboard')">Friends Board</button>
+</nav>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="section">
+
+  <div class="card quote">
+    ✨ Discipline beats motivation.
+  </div>
+
+  <div class="card">
+    <h3>Daily Study Progress</h3>
+    <input type="range" min="0" max="100" id="dailyRange">
+    <div class="progress-bar"><div id="dailyBar"></div></div>
+    <p id="dailyPercent">0%</p>
+  </div>
+
+  <div class="card">
+    <h3>Weekly Progress</h3>
+    <table>
+      <tr><th>Day</th><th>Hours</th></tr>
+      <tr><td>Mon</td><td>2</td></tr>
+      <tr><td>Tue</td><td>3</td></tr>
+      <tr><td>Wed</td><td>1.5</td></tr>
+      <tr><td>Thu</td><td>2</td></tr>
+      <tr><td>Fri</td><td>2.5</td></tr>
+      <tr><td>Sat</td><td>1</td></tr>
+      <tr><td>Sun</td><td>1.5</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Daily Streak</h3>
+    <p class="streak">🔥 <span id="streakCount">0</span> Days</p>
+  </div>
+
+  <!-- ANALYTICS -->
+  <div class="card">
+    <h3>Analytics – Subject Progress</h3>
+    <div id="analyticsBoard"></div>
+  </div>
+
+</section>
+
+<!-- SUBJECTS -->
+<section id="subjects" class="section hidden">
+
+  <div class="card">
+    <h3>Subject Details</h3>
+
+    <select id="branchSelect">
+      <option value="">Select Branch</option>
+      <option>CS</option><option>AI</option><option>ECE</option>
+    </select>
+
+    <select id="semesterSelect">
+      <option value="">Select Semester</option>
+      <option>Semester-1</option>
+      <option>Semester-2</option>
+      <option>Semester-3</option>
+      <option>Semester-4</option>
+      <option>Semester-5</option>
+      <option>Semester-6</option>
+    </select>
+
+    <input id="subjectInput" placeholder="Enter subject name">
+    <input id="chapterInput" placeholder="Enter chapter name">
+    <button id="addSubjectBtn">Add Subject</button>
+
+    <ul id="subjectList"></ul>
+  </div>
+
+</section>
+
+<!-- FRIENDS BOARD -->
+<section id="leaderboard" class="section hidden">
+
+  <div class="card">
+    <h3>Add Friend</h3>
+    <input id="friendName" placeholder="Friend Name">
+    <input id="friendMobile" placeholder="Mobile Number">
+    <input type="number" id="friendProgress" placeholder="Study Progress %">
+    <button id="addFriendBtn">Connect Friend</button>
+  </div>
+
+  <div class="card">
+    <h3>Friends Progress Board</h3>
+    <table id="leaderTable">
+      <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Progress</th>
+      </tr>
+    </table>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
